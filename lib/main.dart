@@ -1,7 +1,29 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(home: InitialScreen()));
+  runApp(
+    MaterialApp(
+      theme: ThemeData(
+        useMaterial3: true,
+        filledButtonTheme: FilledButtonThemeData(
+          style: ButtonStyle(
+            backgroundColor: WidgetStateProperty.all(Colors.red),
+            padding: WidgetStateProperty.all(
+              EdgeInsets.symmetric(horizontal: 22, vertical: 14),
+            ),
+          ),
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: ButtonStyle(
+            side: WidgetStateProperty.all(
+              BorderSide(color: Colors.red, width: 1.5),
+            ),
+          ),
+        ),
+      ),
+      home: InitialScreen(),
+    ),
+  );
 }
 
 class InitialScreen extends StatefulWidget {
