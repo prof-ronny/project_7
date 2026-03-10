@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'primary_button.dart';
+
 void main() {
   runApp(
     MaterialApp(
@@ -81,6 +83,11 @@ class _InitialScreenState extends State<InitialScreen> {
             TextButton(onPressed: () {}, child: const Text('TextButton')),
             const SizedBox(height: 12),
             Text(message),
+            PrimaryButton(
+              label: 'Primary Button',
+              icon: Icons.send,
+              onPressed: () => update('Primary Button clicked'),
+            ),
           ],
         ),
       ),
